@@ -25,4 +25,4 @@ Route::get('/edit', function () {
     return view('edit');
 });
 
-Route::get('/details', [EventController::class, 'details']);
+Route::get('/details/{name}', [EventController::class, 'details']);

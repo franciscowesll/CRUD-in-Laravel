@@ -31,9 +31,16 @@ class EventController extends Controller
         return redirect('/');
     }
 
-    public function details(){
+    public function details($name){
+       
+        if($name){
+            $contacts = contact::where([
+                ['nome','like', '%'.$name.'%']
+            ])->get();
+        } else {
+            echo "nada foi encontrado";
+        }
 
-        
-        return view('/details');
+        return view('details', ['contacts' => $contacts, 'name' => $name]);
     }
 }

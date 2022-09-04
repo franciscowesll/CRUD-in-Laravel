@@ -8,14 +8,13 @@
 </head>
 <body>
 <div class="flex flex-col w-full">
-           <div> 
+          @foreach ($contacts as $contact) 
+          <div> 
              <p> id: {{$contact->id}}</p>
              <p> Name: {{$contact->nome}}</p>
              <p> Contact: {{$contact->tel}}</p>
              <p> E-mail: {{$contact->email}}</p>
           </div>
-          <div>
-        </div>
-        </div>   
+        @endforeach   
 </body>
 </html>
